@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Three Buttons</title>
+    <title>Calories Tracker</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <fieldset id="custInfo">
-        <legend>Add Foods</legend>
-        <div>
-          <label for="food">Food</label>
-          <input name="food" id="food" />
+      <legend>Add Foods</legend>
+      <div>
+        <label for="food">Food Name</label>
+        <input name="food" id="food" />
 
-          <label for="calories">Calories:</label>
-          <input name="calories" id="calories" />
-        </div>
-    <button id="addfoodBtn">Add</button>
+        <label for="calories">Number of Calories</label>
+        <input type="number" name="calories" id="calories" />
+        <button id="addfoodBtn">Submit</button>
+      </div>
+    </fieldset>
+    <div class="calorie-total-margin">
+      <label for="total">Total Calories</label>
+      <input type="number" disabled name="total" id="total" />
+    </div>
+
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

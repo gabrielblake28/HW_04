@@ -1,20 +1,22 @@
-let foodArray = [];
-
 let Food = function (pname, pcalories) {
   this.name = pname;
-  this.calories = pcalories;
+  this.calories = parseInt(pcalories);
 };
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  document.getElementById("addfoodBtn");
+  let foodArray = [];
+  let calorieTotal = 0;
+  foodArray.push(new Food("banana", 75));
+  foodArray.push(new Food("burger", 600));
+  calorieTotal += foodArray[0].calories;
+  calorieTotal += foodArray[1].calories;
 
-  document.getElementById("btnTwo").addEventListener("click", function () {
-    const cubedArray = origArray.map((x) => x * x * x);
-
-    document.getElementById("firstInput").value = cubedArray[0];
-    document.getElementById("secondInput").value = cubedArray[1];
-    document.getElementById("thirdInput").value = cubedArray[2];
+  document.getElementById("addfoodBtn").addEventListener("click", function () {
+    let inputFood = document.getElementById("food").value;
+    let inputCalories = document.getElementById("calories").value;
+    foodArray.push(new Food(inputFood, inputCalories));
+    calorieTotal += parseInt(inputCalories);
+    document.getElementById("total").value = calorieTotal;
+    console.log(foodArray);
   });
-
-  document.getElementById("btnThree").addEventListener("click", toTheFourth);
 });
